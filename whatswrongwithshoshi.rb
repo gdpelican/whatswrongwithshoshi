@@ -39,7 +39,7 @@ end
 
 def whats_wrong
   until !@current.nil? && @@previous != @current do
-    @current = WhatsWrong.order('random()').first
+    @current = WhatsWrong.approved.order('random()').first
   end
   @@previous = @current
 end

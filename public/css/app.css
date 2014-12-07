@@ -18,3 +18,48 @@ main {
   opacity: 1;
   bottom: 0;
 }
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.85);
+  text-align: center;
+}
+
+.i-have-one {
+  position: fixed;
+  right: 0;
+  bottom: 15px;
+  border-radius: 15px 0 0 15px;
+}
+
+.i-dont-have-one {
+  color: white;
+  font-size: 110px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 60%;
+  background: transparent;
+  border: none;
+}
+
+.input {
+  padding: 25% 0 10% 0;
+  font-size: 50px;
+  color: white;
+}
+
+.shoshi-input {
+  text-align: center;
+  background: transparent;
+  border: 0;
+  color: white;
+  font-size: 50px;
+  border-bottom: 2px dashed white;
+  outline: 0;
+}

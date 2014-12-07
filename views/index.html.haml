@@ -7,14 +7,28 @@
       %span.question-fade-in.to-fade-in= I18n.t(:but)
       %span.question-fade-in.to-fade-in= I18n.t(:oh_no)
       %span.question-fade-in.to-fade-in= I18n.t(:shoshi_has_a_problem)
-    %button.btn.btn-primary.btn-success.question-fade-in.to-fade-in.btn-whats-wrong
+    %button.btn.btn-primary.btn-primary.question-fade-in.to-fade-in.btn-whats-wrong
       %span= I18n.t(:whats_wrong_with_shoshi)
   .answer
     %h3
       %span.answer-fade-in.to-fade-in= I18n.t(:oh_no)
       %span.answer-fade-in.to-fade-in= I18n.t(:shes)
       %span.answer-fade-in.to-fade-in.whats-wrong
+      %span.answer-fade-in.to-fade-in !
     %div
-      %button.btn.btn-primary.btn-success.answer-fade-in.to-fade-in.btn-whats-wrong
+      %button.btn.btn-primary.answer-fade-in.to-fade-in.btn-whats-wrong
         %span= I18n.t(:oh_no)
         %span= I18n.t(:what_else_is_wrong)
+  .addition
+    %button.btn.btn-primary.i-have-one.question-fade-in.to-fade-in
+      %span= I18n.t(:i_have_one)
+
+.overlay
+  %button.i-dont-have-one &times;
+  .input
+    %span= I18n.t(:shes)
+    %input.shoshi-input{name: 'description'}
+    %span !
+  .action
+    %button.btn.btn-submit.btn-primary.thats-whats-wrong
+      %span= I18n.t(:thats_whats_wrong)

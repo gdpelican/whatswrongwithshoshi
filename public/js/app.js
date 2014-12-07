@@ -37,8 +37,7 @@ $('button.btn-whats-wrong').on('click', function() {
   $.get('/whatswrong', whatsWrong);
 })
 
-$('button.thats-whats-wrong').on('click', function(e) {
-  e.preventDefault();
+$('button.thats-whats-wrong').on('click', function() {
   $.post('/thatswhatswrong', {description: $('.shoshi-input').val()}, whatsWrong);
 });
 
@@ -48,4 +47,18 @@ $('button.i-have-one').on('click', function() {
 
 $('button.i-dont-have-one').on('click', function() {
   $('.overlay').fadeOut();
+});
+
+$('button.approve-whats-wrong').on('click', function() {
+  row = $(this).closest('tr');
+  $.post('/approvewhatswrong', {id: $(this).data('id')}, function() {
+    row.fadeOut();
+  });
+});
+
+$('button.reject-whats-wrong').on('click', function() {
+  row = $(this).closest('tr');
+  $.post('/rejectwhatswrong', {id: $(this).data('id')}, function() {
+    row.fadeOut();
+  })
 });

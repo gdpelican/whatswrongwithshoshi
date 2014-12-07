@@ -1,0 +1,16 @@
+%main
+  %table.approve-whats-wrong-table
+    %thead
+      %h2= I18n.t(:whats_wrong_with_shoshi)
+    %tbody
+    - if @unapproved.empty?
+      %tr= I18n.t(:nothings_wrong)
+    - else
+      - @unapproved.each do |whats_wrong|
+        %tr.whats-wrong
+          %td
+            = whats_wrong.description
+          %td
+            %button.approve-whats-wrong.btn.btn-success{data: {id: whats_wrong.id} } &#x2713;
+          %td
+            %button.reject-whats-wrong.btn.btn-danger{data: {id: whats_wrong.id} } &#x2717;

@@ -67,3 +67,12 @@ main {
   border-bottom: 2px dashed white;
   outline: 0;
 }
+
+.approve-whats-wrong-table {
+  margin: auto;
+  text-align: center;
+}
+
+.approve-whats-wrong-table td {
+  padding: 5px 10px;
+}

@@ -5,15 +5,9 @@ en:
   oh_no: Oh no!
   shoshi_has_a_problem: Shoshi has a problem.
   whats_wrong_with_shoshi: What's wrong with Shoshi?
-  shes_covered_in_bees: She's covered in bees!
   shes: "She's "
   what_else_is_wrong: What else is wrong?
   i_have_one: I know what's wrong!
   thats_whats_wrong: That's whats wrong!
-  whats_wrong:
-    covered_in_bees: covered in bees!
-    adopted_a_feral_badger: adopted a feral badger!
-    invested_in_gluten: made a huge financial investment in gluten!
-    scolded_by_an_old_person: been scolded by an old person!
-    aubergine_past_its_prime: eaten an aubergine that was past its prime!
-    inner_thigh_itch: got a really bad itch on her inner thigh!
+  nothings_wrong: Nothing new is wrong with Shoshi!
+  unauthorized: I figured out what's wrong! You're not authorized to view this page.

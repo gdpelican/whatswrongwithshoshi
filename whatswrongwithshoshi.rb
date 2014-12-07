@@ -37,6 +37,23 @@ post '/thatswhatswrong' do
   WhatsWrong.create(description: params[:description]) && params[:description]
 end
 
+get '/approvewhatswrong' do
+  if ENV['SALT'] && ENV['PEPPER'] && params[ENV['SALT']] == ENV['PEPPER']
+    @unapproved = WhatsWrong.unapproved
+    haml :'unapproved.html', layout: :'layout.html'
+  else
+    I18n.t(:unauthorized)
+  end
+end
+
+post '/approvewhatswrong' do
+  WhatsWrong.find(params[:id]).update approved: true
+end
+
+post '/rejectwhatswrong' do
+  WhatsWrong.find(params[:id]).destroy
+end
+
 def whats_wrong
   until !@current.nil? && @@previous != @current do
     @current = WhatsWrong.approved.order('random()').first

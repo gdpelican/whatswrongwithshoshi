@@ -5,6 +5,7 @@ require 'haml'
 
 ### CONSTANTS
 
+@@previous = nil
 WHATS_WRONG = [:covered_in_bees, :adopted_a_feral_badger, :invested_in_gluten,
                :scolded_by_an_old_person, :aubergine_past_its_prime, :inner_thigh_itch]
 
@@ -27,5 +28,12 @@ get '/' do
 end
 
 get '/whatswrong' do
-  I18n.t :"whats_wrong.#{WHATS_WRONG.sample}"
+  I18n.t :"whats_wrong.#{whats_next}"
+end
+
+def whats_next
+  until !@current.nil? && @@previous != @current do
+    @current = WHATS_WRONG.sample
+  end
+  @@previous = @current
 end

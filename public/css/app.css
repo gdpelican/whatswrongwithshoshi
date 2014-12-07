@@ -1,3 +1,7 @@
+body {
+  background: url('/img/texture.png');
+}
+
 main {
   margin-top: 75px;
   text-align: center;

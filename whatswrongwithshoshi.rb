@@ -5,7 +5,6 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './config/environments'
 require './models/whats_wrong'
-require 'byebug'
 
 ### CONFIGURATION
 

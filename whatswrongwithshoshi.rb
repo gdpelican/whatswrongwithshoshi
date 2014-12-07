@@ -1,15 +1,17 @@
 require 'i18n'
 require 'i18n/backend/fallbacks'
-require 'sinatra'
 require 'haml'
-
-### CONSTANTS
-
-@@previous = nil
-WHATS_WRONG = [:covered_in_bees, :adopted_a_feral_badger, :invested_in_gluten,
-               :scolded_by_an_old_person, :aubergine_past_its_prime, :inner_thigh_itch]
+require 'sinatra'
+require 'sinatra/activerecord'
+require './config/environments'
+require './models/whats_wrong'
+require 'byebug'
 
 ### CONFIGURATION
+
+def configure_vars
+  @@previous = nil
+end
 
 def configure_i18n
   I18n::Backend::Simple.send :include, I18n::Backend::Fallbacks
@@ -18,6 +20,7 @@ def configure_i18n
 end
 
 configure do
+  configure_vars
   configure_i18n
 end
 
@@ -28,12 +31,16 @@ get '/' do
 end
 
 get '/whatswrong' do
-  I18n.t :"whats_wrong.#{whats_next}"
+  whats_wrong.description
 end
 
-def whats_next
+post '/thatswhatswrong' do
+  WhatsWrong.create(description: params[:description]) && params[:description]
+end
+
+def whats_wrong
   until !@current.nil? && @@previous != @current do
-    @current = WHATS_WRONG.sample
+    @current = WhatsWrong.order('random()').first
   end
   @@previous = @current
 end

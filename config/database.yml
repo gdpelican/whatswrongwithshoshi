@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: shoshi_development
+  encoding: utf8
+  min_messages: warning
+  pool: 5
+  timeout: 5000
